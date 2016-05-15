@@ -10,6 +10,13 @@ private String product_num_list;
 private double total_price;
 private int customer_id;
 private String ship_address;
+private String process;
+public String getProcess() {
+	return process;
+}
+public void setProcess(String process) {
+	this.process = process;
+}
 public int getId() {
 	return id;
 }

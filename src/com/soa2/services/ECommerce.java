@@ -6,6 +6,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -23,11 +24,22 @@ public class ECommerce {//ECommerce提供的接口 主要提供下单和产品列表
 	
 	@GET @Path("allproducts")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	public List<Product> findAll() {
+	public List<Product> findAllProducts() {//所有产品显示
 		System.out.println("findAll");
 		return productdao.findAll();
 	}
-
+	@GET @Path("allorder")
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	public List<Order> findAllOrder() {//系统所有的订单显示
+		System.out.println("findAllorders");
+		return orderdao.findAll();
+	}
+	@GET @Path("orderBycustomer/{customerid}")
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	public List<Order> findOrderByCustomerID(@PathParam("customerid") int  customerid ) {//根据customerid返回其所有的订单
+		
+		return orderdao.findOrderByCustomerID(customerid);
+	}
 	@POST @Path("addorder")
 	@Consumes({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
@@ -38,8 +50,8 @@ public class ECommerce {//ECommerce提供的接口 主要提供下单和产品列表
 //		    "product_num_list":"1,2",
 //		    "total_price":45.6,
 //		    "customer_id":1,
-//		    "ship_address":"sdf"
-//		    
+//		    "ship_address":"Beijing",
+//		    "process":"顾客已下单"
 //		}
 		
 		return orderdao.createOrder(order);

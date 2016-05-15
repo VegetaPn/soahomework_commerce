@@ -3,7 +3,7 @@ package com.soa2.model;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class Logistic {
+public class Logisitic {
 private int id;
 private int order_id;
 private String progress;
