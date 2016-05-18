@@ -15,7 +15,7 @@ public class ConnectionHelper
     	String driver = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			url = "jdbc:mysql://localhost:3306/soaworktwo?user=root&password=123456";//¸ù¾Ý×Ô¼º±¾µØµÄÊý¾Ý¿âÐÞ¸Ä¼´¿É
+			url = "jdbc:mysql://localhost:3306/soaworktwo?user=soa&password=soa";//ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½Þ¸Ä¼ï¿½ï¿½ï¿½
             //ResourceBundle bundle = ResourceBundle.getBundle("cellar");
             //driver = bundle.getString("jdbc.driver");
             //Class.forName(driver);

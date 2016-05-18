@@ -11,5 +11,5 @@ import com.soa2.model.Logistics;
 
 public interface LogisticsInterface {
 	@WebMethod
-	Logistics getLogisticsStatus(int id);
+	Logistics getLogisticsStatus(int orderId);
 }

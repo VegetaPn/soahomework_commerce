@@ -12,9 +12,9 @@ import com.soa2.model.Logistics;
 public class LogisticsImpl implements LogisticsInterface{
 
 	@Override
-	public Logistics getLogisticsStatus(int id) {
+	public Logistics getLogisticsStatus(int orderId) {
 		LogisticDao logistic =new LogisticDao();
-		return logistic.getStatus(id);
+		return logistic.getStatus(orderId);
 	}
 
 }
