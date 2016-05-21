@@ -46,7 +46,6 @@ function findAll() {
 	console.log('findAll');
 	$.ajax({
 		type: 'GET',
-		contentType: 'application/json;charset=UTF-8',
 		url: rootURL+"allproducts",
 		dataType: "json", // data type of response
 		success: renderProductTable
@@ -60,7 +59,7 @@ function traverseTable()
 {
 	console.log("traverseTable");
 	//首先清空缓存的变量
-	clearVariable();
+	//clearVariable();
 	
 	var p_id;
 	var p_number;
@@ -82,6 +81,15 @@ function traverseTable()
 			}
 		});
 	});
+	
+	//清空input里的数据
+	$("#t_list tr").each(function(trindex,product){
+		$(product).find("td input").each(function(tdindex,number){
+			p_number = $(number).val('0');
+		});
+	});
+
+	
 	//alert(productIds);
 	//alert(productNumbers);
 	//alert(totalPrice);
@@ -91,8 +99,10 @@ function traverseTable()
 function clearVariable(){
 	var id_length = productIds.length;
 	var number_length = productNumbers.length;
-	productIds.slice(0,id_length);
-	productNumbers.slice(0,number_length);
+	//productIds.splice(0,id_length);
+	//productNumbers.splice(0,number_length);
+	productIds = new Array();
+	productNumbers = new Array();
 	totalPrice = 0;
 	
 	//alert(productIds);
@@ -112,20 +122,22 @@ function calcPrice(price, number){
 //生成订单
 function sendOrder(){
 	console.log('sendOrder');
-	
+	clearVariable();
 	//遍历表格，取出数据
 	traverseTable();
 
-	$.ajax({
-		type: 'POST',
-		contentType: 'application/json;charset=UTF-8',
-		url: rootURL+"addorder", 
-		dataType: "json",
-		data: makeJsonOrders(), 
-		/*success: function(data, textStatus, jqXHR){
-			alert('订单号：'+data.memberid);
-		}*/
-	});
+	if(totalPrice!=0){
+		$.ajax({
+			type: 'POST',
+			contentType: 'application/json',
+			url: rootURL+"addorder", 
+			dataType: "json",
+			data: makeJsonOrders(), 
+			/*success: function(data, textStatus, jqXHR){
+				alert('订单号：'+data.memberid);
+			}*/
+		});
+	}
 }
 
 
@@ -174,7 +186,6 @@ function getOrderByCustomerId(id){
 	console.log('getOrderByCustomerId：'+id);
 	$.ajax({
 		type: 'GET',
-		contentType: 'application/json;charset=UTF-8',
 		url: rootURL +"orderBycustomer/"+id,
 		dataType: "json",
 		success: renderTableOrderById
@@ -207,7 +218,6 @@ function findOrders()
 	console.log('allOrders');
 	$.ajax({
 		type: 'GET',
-		contentType: 'application/json;charset=UTF-8',
 		url: rootURL+"allorder",
 		dataType: "json", // data type of response
 		success: renderTableOrder
@@ -241,7 +251,6 @@ function produce(obj){
 	alert(manufactureURL+i_order_id);
 	$.ajax({
 		type: 'GET',
-		contentType: 'application/json;charset=UTF-8',
 		url: manufactureURL+i_order_id,
 		dataType: "json",
 		success: function(data, textStatus, jqXHR){
@@ -258,7 +267,6 @@ function shipping(obj){
 	alert(logisticURL+order_id);
 	$.ajax({
 		type: 'GET',
-		contentType: 'application/json;charset=UTF-8',
 		url: logisticURL+order_id,
 		dataType: "json",
 		success: function(data, textStatus, jqXHR){
@@ -272,7 +280,6 @@ function getLogisticByOrderId(id){
 	console.log('getLogisticByOrderId'+id);
 	$.ajax({
 		type: 'GET',
-		contentType: 'application/json;charset=UTF-8',
 		url: logisticURL +id,
 		dataType: "json",
 		success: renderTableLogistic
