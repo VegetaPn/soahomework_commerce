@@ -2,7 +2,9 @@
 var rootURL = "http://localhost:8080/soa/rest/ECommerce/";
 var logisticURL = "http://localhost:8080/soa/rest/LogisiticService/";
 var manufactureURL = "http://localhost:8080/soa/rest/Manufactures/";
-
+var productIds = new Array();//商品ID数组
+var productNumbers = new Array();//商品数量数组
+var totalPrice = 0;
 // Retrieve product list when application starts 
 findAll();
 findOrders();
@@ -14,6 +16,7 @@ findOrders();
 //添加订单
 $(document).on("click", "#btnAddOrder", function() {
 	sendOrder();
+	//traverseTable();
 });
 
 //查询订单详情
@@ -24,6 +27,15 @@ $(document).on("click", "#btngetOrder", function() {
 //查询订单物流状态
 $(document).on("click", "#btnGetLogistic", function(){
 	getLogisticByOrderId($('#orderId').val());
+});
+
+$(document).ready(function(){
+  $('#t_orders button').each(function() {
+     $(this).click(function() {     
+     window.alert($(this).attr("id_")); // 这是序号
+
+  });
+});
 });
 
 /*
@@ -40,20 +52,82 @@ function findAll() {
 	});
 }
 
+//遍历表格
+//1. 遍历每行，取出数量不为0的，加入二维数组，
+//i = parseInt($(number).val());关键，取到input里的数量
+function traverseTable()
+{
+	console.log("traverseTable");
+	//首先清空缓存的变量
+	clearVariable();
+	
+	var p_id;
+	var p_number;
+	var p_price;
+	$("#t_list tr").each(function(trindex,product){
+		$(product).find("td input").each(function(tdindex,number){
+			p_number = $(number).val();
+			if(p_number != "0")
+			{
+				//alert(p_number);
+				p_id = $(product).children("td[id]").text();
+				p_price = parseInt($(product).children("td[name]").text());
+				//alert(p_price);
+				//alert(p_id);
+				productIds.push(p_id);
+				productNumbers.push(p_number);
+				//计算价格
+				calcPrice(p_price,p_number);
+			}
+		});
+	});
+	//alert(productIds);
+	//alert(productNumbers);
+	//alert(totalPrice);
+}
+
+//清除缓存变量
+function clearVariable(){
+	var id_length = productIds.length;
+	var number_length = productNumbers.length;
+	productIds.slice(0,id_length);
+	productNumbers.slice(0,number_length);
+	totalPrice = 0;
+	
+	//alert(productIds);
+	//alert(productNumbers);
+	//alert(totalPrice);
+}
+
+//计算价格
+function calcPrice(price, number){
+	var i_price = parseInt(price);
+	var i_number = parseInt(number);
+	
+	totalPrice += (i_price * i_number);
+	//alert(i_price+": "+i_number +": "+totalPrice);
+}
+
 //生成订单
 function sendOrder(){
 	console.log('sendOrder');
+	
+	//遍历表格，取出数据
+	traverseTable();
+
 	$.ajax({
 		type: 'POST',
 		contentType: 'application/json',
 		url: rootURL+"addorder", 
 		dataType: "json",
-		data: makeJsonOrders, 
-		success: function(data, textStatus, jqXHR){
+		data: makeJsonOrders(), 
+		/*success: function(data, textStatus, jqXHR){
 			alert('订单号：'+data.memberid);
-		}
+		}*/
 	});
 }
+
+
 
 //准备商品列表
 function renderProductTable(data){
@@ -63,10 +137,10 @@ function renderProductTable(data){
 	$.each(list, function(index, item) {
 		var tbBody = "";
 		
-		tbBody += "<tr><td>"+item.id+"</td>"
+		tbBody += "<tr><td id=\""+item.id+"\">"+item.id+"</td>"
 		+"<td>"+item.name+"</td>"
 		+"<td>"+item.description+"</td>"
-		+"<td>$"+item.price+"</td>"
+		+"<td name=\"price\">"+item.price+"</td>"
 		+"<td>"+item.stock+"</td>"
 		+"<td><button type=\"button\" class=\"btn btn-mini\" onclick=\"cart_number('number"+item.id+"','-',1);\" >-</button>"
 		//+"<td><button type=\"button\" class=\"btn btn-mini\" name=\"btnMinus\">-</button>"
@@ -82,10 +156,12 @@ function renderProductTable(data){
 //准备订单数据
 function makeJsonOrders(){
 	return JSON.stringify({
-		"id": 1 ,
-		"product_id_list": "1,2", 
-		"product_num_list": "3,4",
-		"total_price": "56",
+		"id": 1,
+		"product_id_list": productIds.join(","), 
+		//"product_id_list": "1,2", 
+		"product_num_list": productNumbers.join(","),
+		//"product_num_list": "3,4",
+		"total_price": totalPrice,
 		"customer_id": "1",
 		"ship_address": "Beijing",
 		"process": "客户已下单"
@@ -134,7 +210,7 @@ function findOrders()
 	});
 }
 
-//显示所有订单
+//显示全部订单
 function renderTableOrder(data){
 	var list = data == null ? [] : (data instanceof Array ? data : [data]);
 	
@@ -142,13 +218,46 @@ function renderTableOrder(data){
 	$.each(list, function(index, item) {
 		var tbBody = "";
 		
-		tbBody += "<tr><td>"+item.id+"</td>"
+		tbBody += "<tr><td id=\""+item.id+"\">"+item.id+"</td>"
 		+"<td>"+item.product_id_list+"</td>"
 		+"<td>"+item.product_num_list+"</td>"
-		+"<td><button type=\"button\" class=\"btn btn-mini btn-primary\">produce</button></td>"
-		+"<td><button type=\"button\" class=\"btn btn-mini\" disabled>shipping</button></td></tr>"
+		+"<td><button type=\"button\" class=\"btn btn-mini btn-primary\" onclick='produce(this)'>produce</button></td>"
+		+"<td><button type=\"button\" class=\"btn btn-mini\" onclick='shipping(this)'>shipping</button></td></tr>"
 		
 		$('#t_orders').append(tbBody);
+	});
+}
+
+function produce(obj){ 
+	var td = $(obj).parent();
+	var tr = $(td).parent();
+	//获取ID值
+	var s_order_id = $(tr).children("td[id]").text();
+	var i_order_id = parseInt(s_order_id);
+	alert(manufactureURL+i_order_id);
+	$.ajax({
+		type: 'GET',
+		url: manufactureURL+i_order_id,
+		dataType: "json",
+		success: function(data, textStatus, jqXHR){
+			alert("produce");
+		}
+	});
+} 
+
+function shipping(obj){
+	var td = $(obj).parent();
+	var tr = $(td).parent();
+	//获取ID值
+	var order_id = $(tr).children("td[id]").text();
+	alert(logisticURL+order_id);
+	$.ajax({
+		type: 'GET',
+		url: logisticURL+order_id,
+		dataType: "json",
+		success: function(data, textStatus, jqXHR){
+			alert("shipping");
+		}
 	});
 }
 

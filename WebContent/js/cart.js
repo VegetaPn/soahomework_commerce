@@ -6,7 +6,7 @@
 */
 function cart_number(txt_id, type, num) 
 { 
-	alert(txt_id);
+	//alert(txt_id);
 	num = num || 1; 
 	var txt = document.getElementById(txt_id); 
 	var source_num = parseInt(txt.value); 
@@ -26,8 +26,6 @@ function cart_number(txt_id, type, num)
 	} 
 	
 	txt.value = to_num;
-	
-	//商品信息添加到cookie
 	
 	//changePrice(to_num);
 }
