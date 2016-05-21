@@ -193,7 +193,7 @@ function renderTableOrderById(data){
 		+"<td>"+item.product_num_list+"</td>"
 		+"<td>"+item.ship_address+"</td>"
 		+"<td>$"+item.total_price+"</td>"
-		+"<td>"+item.progress+"</td></tr>"
+		+"<td>"+item.process+"</td></tr>"
 		
 		$('#t_orderById').append(tbBody);
 	});
