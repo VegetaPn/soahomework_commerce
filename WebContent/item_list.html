@@ -36,18 +36,18 @@
 				
 					<ul class="nav nav-list">
 						<li class="nav-header">Customer</li>
-						<li class="active"><a href="item_list.html" id="listItems">商品列表</a></li>
-						<li><a href="order_status.html">订单状态</a></li>
+						<li class="active"><a href="item_list.html"><span id="itemList">商品列表</span></a></li>
+						<li><a href="order_status.html"><span id="orderState">订单状态</span></a></li>
 					</ul>
 					
 					<ul class="nav nav-list">
 						<li class="nav-header">Manufactory</li>
-						<li><a href="orders.html">订单</a></li>
+						<li><a href="orders.html"><span id="orders">订单</span></a></li>
 					</ul>
 					
 					<ul class="nav nav-list">
 						<li class="nav-header">Logistic</li>
-						<li><a href="logistic_status.html">物流状态查询</a></li>
+						<li><a href="logistic_status.html"><span id="logisticStatus">物流状态查询</span></a></li>
 					</ul>
 					
 				</div>
@@ -55,23 +55,24 @@
 				<!-- 右侧主要内容 -->
 				<div class="span9">
 				<h1>商品列表</h1>
-			   <table class="table table-striped" id="t_list">
-				   <thead>
-					   <tr>
-						  <th>#</th>
-						  <th>商品名称</th>
-						  <th>描述</th>
-						  <th>价格</th>
-						  <th>库存</th>
-						  <th>数量</th>
-					   </tr>
-					</thead>
+				   <table class="table table-striped" id="t_list">
+					   <thead>
+						   <tr>
+							  <th>#</th>
+							  <th>商品名称</th>
+							  <th>描述</th>
+							  <th>价格</th>
+							  <th>库存</th>
+							  <th>数量</th>
+						   </tr>
+						</thead>
+					   
+					   <!-- <tbody id="tbody_list">
+					   </tbody> -->
+					   
+				   </table>
+			    <button id="btnAddOrder">提交订单</button>
 				   
-				   <tbody id="tbody_list">
-				   
-				   </tbody>
-				   
-			   </table>
 				
 				</div>
 			</div>
