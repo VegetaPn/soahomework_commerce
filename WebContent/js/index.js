@@ -120,10 +120,10 @@ function sendOrder(){
 		contentType: 'application/json',
 		url: rootURL+"addorder", 
 		dataType: "json",
-		data: makeJsonOrders, 
-		success: function(data, textStatus, jqXHR){
+		data: makeJsonOrders(), 
+		/*success: function(data, textStatus, jqXHR){
 			alert('订单号：'+data.memberid);
-		}
+		}*/
 	});
 }
 
@@ -157,11 +157,11 @@ function renderProductTable(data){
 function makeJsonOrders(){
 	return JSON.stringify({
 		"id": 1,
-		//"product_id_list": productIds.join(","), 
-		"product_id_list": "1,2", 
-		//"product_num_list": productNumbers.join(","),
-		"product_num_list": "3,4",
-		"total_price": "4",
+		"product_id_list": productIds.join(","), 
+		//"product_id_list": "1,2", 
+		"product_num_list": productNumbers.join(","),
+		//"product_num_list": "3,4",
+		"total_price": totalPrice,
 		"customer_id": "1",
 		"ship_address": "Beijing",
 		"process": "客户已下单"
