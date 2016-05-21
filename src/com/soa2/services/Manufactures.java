@@ -15,6 +15,7 @@ import com.soa2.dao.OrderDao;
 import com.soa2.dao.ProductDao;
 import com.soa2.model.Manufacture;
 import com.soa2.model.Order;
+import com.soa2.model.Status;
 
 @Path("/Manufactures")
 public class Manufactures {
@@ -23,13 +24,17 @@ public class Manufactures {
 	OrderDao orderdao=new OrderDao();
 	@GET @Path("{orderid}")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	public boolean produce(@PathParam("orderid") int orderid) {//true是内存充足可以生产并减少库存，fasle是不足 不能产
+	
+	public Status produce(@PathParam("orderid") int orderid) {//true是内存充足可以生产并减少库存，fasle是不足 不能产
+		Status status=new Status();
 		if(dao.produces(orderid)){
 			mdao.createManufactures(orderid);//加入记录中
 			orderdao.updateProcess("厂商已生产", orderid);
-			return true;
+			status.setResult(true);
+			return status;
 		}else{
-			return false;
+			status.setResult(false);
+			return status;
 		}
 		
 		
