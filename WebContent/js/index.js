@@ -1,7 +1,7 @@
 // The root URL for the RESTful services
-var rootURL = "http://localhost:8080/soa/rest/ECommerce/";
-var logisticURL = "http://localhost:8080/soa/rest/LogisiticService/";
-var manufactureURL = "http://localhost:8080/soa/rest/Manufactures/";
+var rootURL = "rest/ECommerce/";
+var logisticURL = "rest/LogisiticService/";
+var manufactureURL = "rest/Manufactures/";
 var productIds = new Array();//商品ID数组
 var productNumbers = new Array();//商品数量数组
 var totalPrice = 0;
