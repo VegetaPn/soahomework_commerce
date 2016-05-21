@@ -46,6 +46,7 @@ function findAll() {
 	console.log('findAll');
 	$.ajax({
 		type: 'GET',
+		contentType: 'application/json;charset=UTF-8',
 		url: rootURL+"allproducts",
 		dataType: "json", // data type of response
 		success: renderProductTable
@@ -117,7 +118,7 @@ function sendOrder(){
 
 	$.ajax({
 		type: 'POST',
-		contentType: 'application/json',
+		contentType: 'application/json;charset=UTF-8',
 		url: rootURL+"addorder", 
 		dataType: "json",
 		data: makeJsonOrders(), 
@@ -173,6 +174,7 @@ function getOrderByCustomerId(id){
 	console.log('getOrderByCustomerId£º'+id);
 	$.ajax({
 		type: 'GET',
+		contentType: 'application/json;charset=UTF-8',
 		url: rootURL +"orderBycustomer/"+id,
 		dataType: "json",
 		success: renderTableOrderById
@@ -205,6 +207,7 @@ function findOrders()
 	console.log('allOrders');
 	$.ajax({
 		type: 'GET',
+		contentType: 'application/json;charset=UTF-8',
 		url: rootURL+"allorder",
 		dataType: "json", // data type of response
 		success: renderTableOrder
@@ -238,6 +241,7 @@ function produce(obj){
 	alert(manufactureURL+i_order_id);
 	$.ajax({
 		type: 'GET',
+		contentType: 'application/json;charset=UTF-8',
 		url: manufactureURL+i_order_id,
 		dataType: "json",
 		success: function(data, textStatus, jqXHR){
@@ -254,6 +258,7 @@ function shipping(obj){
 	alert(logisticURL+order_id);
 	$.ajax({
 		type: 'GET',
+		contentType: 'application/json;charset=UTF-8',
 		url: logisticURL+order_id,
 		dataType: "json",
 		success: function(data, textStatus, jqXHR){
@@ -267,6 +272,7 @@ function getLogisticByOrderId(id){
 	console.log('getLogisticByOrderId'+id);
 	$.ajax({
 		type: 'GET',
+		contentType: 'application/json;charset=UTF-8',
 		url: logisticURL +id,
 		dataType: "json",
 		success: renderTableLogistic
