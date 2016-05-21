@@ -31,7 +31,7 @@ public class LogisiticService {
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	public Logisitic transport(@PathParam("orderid") int orderid) {//trueï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¿ï¿½æ£¬fasleï¿½Ç²ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ü²ï¿½
 		
-			orderdao.updateProcess("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", orderid);
+			orderdao.updateProcess("ÎïÁ÷ÅäËÍÖÐ", orderid);
 			return logisitic.create(orderid);
 		
 	}

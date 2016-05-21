@@ -160,7 +160,7 @@ public class OrderDao {
             ps.setDouble(3, order.getTotal_price());
             ps.setInt(4, order.getCustomer_id());
             ps.setString(5, order.getShip_address());
-            ps.setString(6, order.getProcess());
+            ps.setString(6, "顾客已下单");
             System.out.println(sql);
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
