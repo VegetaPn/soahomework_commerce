@@ -32,6 +32,7 @@ public class OrderDao {
 	            	order.setTotal_price(rs.getDouble("total_price"));
 	            	order.setCustomer_id(rs.getInt("customer_id"));
 	            	order.setShip_address(rs.getString("ship_address"));
+	            	order.setProcess(rs.getString("process"));
 	                list.add(order);
 	            }
 	        } catch (SQLException e) {
@@ -159,7 +160,7 @@ public class OrderDao {
             ps.setDouble(3, order.getTotal_price());
             ps.setInt(4, order.getCustomer_id());
             ps.setString(5, order.getShip_address());
-            ps.setString(6, order.getProcess());
+            ps.setString(6, "顾客已下单");
             System.out.println(sql);
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
