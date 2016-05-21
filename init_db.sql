@@ -88,8 +88,7 @@ CREATE TABLE `order` (
 -- ----------------------------
 -- Records of order
 -- ----------------------------
-INSERT INTO `order` VALUES ('1', 'asdf', 'f', '123', '1', 'asdf', null);
-INSERT INTO `order` VALUES ('2', 'asdf', 'f', '123', '1', 'asdf', null);
+
 INSERT INTO `order` VALUES ('3', '2,3', '1,2', '46', '1', 'sdf', null);
 INSERT INTO `order` VALUES ('4', '2,3', '1,2', '46', '1', 'sdf', null);
 INSERT INTO `order` VALUES ('5', '2,3', '1,2', '46', '1', 'sdf', null);

@@ -32,6 +32,7 @@ public class OrderDao {
 	            	order.setTotal_price(rs.getDouble("total_price"));
 	            	order.setCustomer_id(rs.getInt("customer_id"));
 	            	order.setShip_address(rs.getString("ship_address"));
+	            	order.setProcess(rs.getString("process"));
 	                list.add(order);
 	            }
 	        } catch (SQLException e) {
