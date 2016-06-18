@@ -1,0 +1,7 @@
+1.请各位将Ecommerce_API.xml复制到
+你自己的安装目录\wso2\wso2esb-4.9.0\repository\deployment\server\synapse-configs\default\api下
+2.将Ecommerce_service.xml复制到
+你自己的安装目录\wso2\wso2esb-4.9.0\repository\deployment\server\synapse-configs\default\proxy-services下
+3 运行的时候注意 自己的tomcat的域名，可能咱们的不一样，自己在xml文件中改成自己的域名
+4 运行esbserver，点开api，按照xml里的uri-template运行对应的
+访问server
