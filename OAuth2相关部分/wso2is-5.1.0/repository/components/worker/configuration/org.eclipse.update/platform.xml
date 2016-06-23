@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config transient="false" date="1450717837277">
+	<site enabled="true" updateable="true" policy="USER-EXCLUDE" url="platform:/base/">
+		<feature id="org.wso2.carbon.user.mgt.workflow.server" url="features/org.wso2.carbon.user.mgt.workflow.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.scim" url="features/org.wso2.carbon.identity.scim_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.core.runtime" url="features/org.wso2.carbon.core.runtime_4.4.3/" version="4.4.3">
+		</feature>
+		<feature id="org.wso2.carbon.identity.provisioning.connector.salesforce.server" url="features/org.wso2.carbon.identity.provisioning.connector.salesforce.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.soaptracer.server" url="features/org.wso2.carbon.soaptracer.server_4.4.8/" version="4.4.8">
+		</feature>
+		<feature id="org.wso2.carbon.identity.core.ui" url="features/org.wso2.carbon.identity.core.ui_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.jaggeryjs.modules.markdown" url="features/org.jaggeryjs.modules.markdown_1.5.0/" version="1.5.0">
+		</feature>
+		<feature id="org.wso2.carbon.identity.authenticator.mutualssl" url="features/org.wso2.carbon.identity.authenticator.mutualssl_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.registry.core.common" url="features/org.wso2.carbon.registry.core.common_4.4.8/" version="4.4.8">
+		</feature>
+		<feature id="org.wso2.carbon.identity.authenticator.saml2.sso.server" url="features/org.wso2.carbon.identity.authenticator.saml2.sso.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.jaggeryjs.modules.gadget" url="features/org.jaggeryjs.modules.gadget_1.5.0/" version="1.5.0">
+		</feature>
+		<feature id="org.wso2.carbon.identity.notification.mgt.server" url="features/org.wso2.carbon.identity.notification.mgt.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.core.server" url="features/org.wso2.carbon.identity.core.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.tenant.mgt.common.server" url="features/org.wso2.carbon.tenant.mgt.common.server_4.4.8/" version="4.4.8">
+		</feature>
+		<feature id="org.wso2.carbon.tenant.common.server" url="features/org.wso2.carbon.tenant.common.server_4.5.0/" version="4.5.0">
+		</feature>
+		<feature id="org.wso2.carbon.security.mgt.server" url="features/org.wso2.carbon.security.mgt.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.system.statistics.server" url="features/org.wso2.carbon.system.statistics.server_4.4.8/" version="4.4.8">
+		</feature>
+		<feature id="org.wso2.carbon.identity.sso.saml.server" url="features/org.wso2.carbon.identity.sso.saml.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.authenticator.iwa.server" url="features/org.wso2.carbon.identity.authenticator.iwa.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.as.runtimes.cxf" url="features/org.wso2.carbon.as.runtimes.cxf_4.5.3/" version="4.5.3">
+		</feature>
+		<feature id="org.wso2.carbon.databridge.agent.thrift.server" url="features/org.wso2.carbon.databridge.agent.thrift.server_4.4.8/" version="4.4.8">
+		</feature>
+		<feature id="org.wso2.identity.utils" url="features/org.wso2.identity.utils_5.1.0/" version="5.1.0">
+		</feature>
+		<feature id="org.wso2.carbon.registry.profiles.server" url="features/org.wso2.carbon.registry.profiles.server_4.4.8/" version="4.4.8">
+		</feature>
+		<feature id="org.wso2.carbon.claim.mgt.server" url="features/org.wso2.carbon.claim.mgt.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.event.server" url="features/org.wso2.carbon.event.server_4.4.8/" version="4.4.8">
+		</feature>
+		<feature id="org.wso2.carbon.identity.sts.passive.server" url="features/org.wso2.carbon.identity.sts.passive.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.application.authenticator.iwa.server" url="features/org.wso2.carbon.identity.application.authenticator.iwa.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.jaggeryjs.modules.email" url="features/org.jaggeryjs.modules.email_1.5.0/" version="1.5.0">
+		</feature>
+		<feature id="org.wso2.carbon.registry.contentsearch.server" url="features/org.wso2.carbon.registry.contentsearch.server_4.4.8/" version="4.4.8">
+		</feature>
+		<feature id="org.wso2.carbon.logging.mgt.server" url="features/org.wso2.carbon.logging.mgt.server_4.4.8/" version="4.4.8">
+		</feature>
+		<feature id="org.wso2.carbon.identity.thrift.authentication" url="features/org.wso2.carbon.identity.thrift.authentication_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.tools.saml.validator.server" url="features/org.wso2.carbon.identity.tools.saml.validator.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.deployment.synchronizer.server" url="features/org.wso2.carbon.deployment.synchronizer.server_4.4.8/" version="4.4.8">
+		</feature>
+		<feature id="org.wso2.carbon.identity.application.authenticator.samlsso.server" url="features/org.wso2.carbon.identity.application.authenticator.samlsso.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.application.authenticator.oidc.server" url="features/org.wso2.carbon.identity.application.authenticator.oidc.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.jaggeryjs.modules.sso" url="features/org.jaggeryjs.modules.sso_1.5.0/" version="1.5.0">
+		</feature>
+		<feature id="org.wso2.carbon.databridge.commons.server" url="features/org.wso2.carbon.databridge.commons.server_4.4.8/" version="4.4.8">
+		</feature>
+		<feature id="org.wso2.carbon.identity.oauth.common" url="features/org.wso2.carbon.identity.oauth.common_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.user.mgt.server" url="features/org.wso2.carbon.user.mgt.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.core.common" url="features/org.wso2.carbon.core.common_4.4.3/" version="4.4.3">
+		</feature>
+		<feature id="org.wso2.carbon.identity.provisioning.connector.google.server" url="features/org.wso2.carbon.identity.provisioning.connector.google.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.application.authenticator.fido.server" url="features/org.wso2.carbon.identity.application.authenticator.fido.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.provisioning.server" url="features/org.wso2.carbon.identity.provisioning.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.scim.provider" url="features/org.wso2.carbon.identity.scim.provider_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.scim.common" url="features/org.wso2.carbon.identity.scim.common_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.oauth.server" url="features/org.wso2.carbon.identity.oauth.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.application.authenticator.openid.server" url="features/org.wso2.carbon.identity.application.authenticator.openid.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.sts.server" url="features/org.wso2.carbon.sts.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.provisioning.connector.scim.server" url="features/org.wso2.carbon.identity.provisioning.connector.scim.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.registry.resource.properties.server" url="features/org.wso2.carbon.registry.resource.properties.server_4.4.8/" version="4.4.8">
+		</feature>
+		<feature id="org.wso2.carbon.ldap.server.server" url="features/org.wso2.carbon.ldap.server.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.event.common" url="features/org.wso2.carbon.event.common_4.4.8/" version="4.4.8">
+		</feature>
+		<feature id="org.wso2.carbon.webapp.mgt.server" url="features/org.wso2.carbon.webapp.mgt.server_4.5.3/" version="4.5.3">
+		</feature>
+		<feature id="org.wso2.carbon.identity.user.profile.server" url="features/org.wso2.carbon.identity.user.profile.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.jaggeryjs.server" url="features/org.jaggeryjs.server_0.12.1/" version="0.12.1">
+		</feature>
+		<feature id="org.wso2.carbon.databridge.datapublisher" url="features/org.wso2.carbon.databridge.datapublisher_4.4.8/" version="4.4.8">
+		</feature>
+		<feature id="org.jaggeryjs.modules.uuid" url="features/org.jaggeryjs.modules.uuid_1.5.0/" version="1.5.0">
+		</feature>
+		<feature id="org.wso2.carbon.identity.application.authenticator.passive.sts.server" url="features/org.wso2.carbon.identity.application.authenticator.passive.sts.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.core" url="features/org.wso2.carbon.identity.core_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.jaggeryjs.modules.ws" url="features/org.jaggeryjs.modules.ws_1.5.0/" version="1.5.0">
+		</feature>
+		<feature id="org.wso2.carbon.databridge.commons.thrift.server" url="features/org.wso2.carbon.databridge.commons.thrift.server_4.4.8/" version="4.4.8">
+		</feature>
+		<feature id="org.wso2.carbon.identity.user.account.association.server" url="features/org.wso2.carbon.identity.user.account.association.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.jaggeryjs.modules.carbon" url="features/org.jaggeryjs.modules.carbon_1.5.0/" version="1.5.0">
+		</feature>
+		<feature id="org.wso2.carbon.identity.provisioning.connector.spml.server" url="features/org.wso2.carbon.identity.provisioning.connector.spml.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.metrics.server" url="features/org.wso2.carbon.metrics.server_1.1.1/" version="1.1.1">
+		</feature>
+		<feature id="org.wso2.carbon.identity.application.mgt.server" url="features/org.wso2.carbon.identity.application.mgt.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.application.authenticator.requestpath.basicauth.server" url="features/org.wso2.carbon.identity.application.authenticator.requestpath.basicauth.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.um.ws.service.server" url="features/org.wso2.carbon.um.ws.service.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.xacml.server" url="features/org.wso2.carbon.identity.xacml.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.application.authenticator.requestpath.oauth.server" url="features/org.wso2.carbon.identity.application.authenticator.requestpath.oauth.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.jaggeryjs.modules.oauth" url="features/org.jaggeryjs.modules.oauth_1.5.0/" version="1.5.0">
+		</feature>
+		<feature id="org.wso2.carbon.ldap.server" url="features/org.wso2.carbon.ldap.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.jaggeryjs.modules.process" url="features/org.jaggeryjs.modules.process_1.5.0/" version="1.5.0">
+		</feature>
+		<feature id="org.wso2.carbon.dashboards.shindig" url="features/org.wso2.carbon.dashboards.shindig_1.0.8/" version="1.0.8">
+		</feature>
+		<feature id="org.wso2.carbon.identity.sts.mgt.server" url="features/org.wso2.carbon.identity.sts.mgt.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.user.registration.server" url="features/org.wso2.carbon.identity.user.registration.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.provider.server" url="features/org.wso2.carbon.identity.provider.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.core.server" url="features/org.wso2.carbon.core.server_4.4.3/" version="4.4.3">
+		</feature>
+		<feature id="org.wso2.carbon.identity.workflow.mgt.server" url="features/org.wso2.carbon.identity.workflow.mgt.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.core" url="features/org.wso2.carbon.core_4.4.3/" version="4.4.3">
+		</feature>
+		<feature id="org.jaggeryjs.modules.handlebars" url="features/org.jaggeryjs.modules.handlebars_1.5.0/" version="1.5.0">
+		</feature>
+		<feature id="org.wso2.carbon.identity.application.authentication.framework.server" url="features/org.wso2.carbon.identity.application.authentication.framework.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.identity.application.authenticator.social.server" url="features/org.wso2.carbon.identity.application.authenticator.social.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.core.ui" url="features/org.wso2.carbon.core.ui_4.4.3/" version="4.4.3">
+		</feature>
+		<feature id="org.jaggeryjs.modules.caramel" url="features/org.jaggeryjs.modules.caramel_1.5.0/" version="1.5.0">
+		</feature>
+		<feature id="org.wso2.carbon.directory.service.mgr.server" url="features/org.wso2.carbon.directory.service.mgr.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.apache.axis2.transport.mail" url="features/org.apache.axis2.transport.mail_1.1.0.wso2v13/" version="1.1.0.wso2v13">
+		</feature>
+		<feature id="org.wso2.carbon.identity.mgt.server" url="features/org.wso2.carbon.identity.mgt.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.idp.mgt.server" url="features/org.wso2.carbon.idp.mgt.server_5.0.7/" version="5.0.7">
+		</feature>
+		<feature id="org.wso2.carbon.registry.core.server" url="features/org.wso2.carbon.registry.core.server_4.4.8/" version="4.4.8">
+		</feature>
+		<feature id="org.jaggeryjs.modules.i18n" url="features/org.jaggeryjs.modules.i18n_1.5.0/" version="1.5.0">
+		</feature>
+		<feature id="org.wso2.carbon.identity.application.authenticator.basicauth.server" url="features/org.wso2.carbon.identity.application.authenticator.basicauth.server_5.0.7/" version="5.0.7">
+		</feature>
+	</site>
+</config>
