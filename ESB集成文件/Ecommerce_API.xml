@@ -4,6 +4,7 @@
      context="/ecommerce">
    <resource methods="GET" uri-template="/api/orders*">
       <inSequence>
+         <oauthService remoteServiceUrl="https://localhost:9444/services" username="admin" password="admin"></oauthService>
          <log>
             <property name="Message Flow" value="Ecommerce Info API - IN"/>
             <property name="Id" expression="$ctx:query.param.id"/>
@@ -14,7 +15,7 @@
                <send>
                   <endpoint>
                      <http method="GET"
-                           uri-template="http://localhost:8080/soa_home2/rest/ECommerce/orderBycustomer/{query.param.id}"/>
+                           uri-template="http://localhost:8080/test/rest/ECommerce/orderBycustomer/{query.param.id}"/>
                   </endpoint>
                </send>
             </then>
@@ -22,7 +23,7 @@
                <send>
                   <endpoint>
                      <http method="GET"
-                           uri-template="http://localhost:8080/soa_home2/rest/ECommerce/allorder"/>
+                           uri-template="http://localhost:8080/test/rest/ECommerce/allorder"/>
                   </endpoint>
                </send>
             </else>
@@ -35,13 +36,14 @@
 
    <resource methods="GET" uri-template="/api/products*">
       <inSequence>
+         <oauthService remoteServiceUrl="https://localhost:9444/services" username="admin" password="admin"></oauthService>
          <log>
             <property name="Message Flow" value="Products API - IN"/>
          </log>
          <send>
             <endpoint>
                <http method="GET"
-                     uri-template="http://localhost:8080/soa_home2/rest/ECommerce/allproducts"/>
+                     uri-template="http://localhost:8080/test/rest/ECommerce/allproducts"/>
             </endpoint>
          </send>
       </inSequence>
@@ -52,13 +54,14 @@
 
 <resource methods="GET" uri-template="/api/proccess/{pro}">
       <inSequence>
+         <oauthService remoteServiceUrl="https://localhost:9444/services" username="admin" password="admin"></oauthService>
          <log>
             <property name="Message Flow" value="Products API - IN"/>
          </log>
          <send>
             <endpoint>
                <http method="GET"
-                     uri-template="http://localhost:8080/soa_home2/rest/LogisiticService/findorderByprocess/{uri.var.pro}"/>
+                     uri-template="http://localhost:8080/test/rest/LogisiticService/findorderByprocess/{uri.var.pro}"/>
             </endpoint>
          </send>
       </inSequence>
@@ -69,13 +72,14 @@
 
 <resource methods="GET" uri-template="/api/LogisiticService/{orderid}">
       <inSequence>
+         <oauthService remoteServiceUrl="https://localhost:9444/services" username="admin" password="admin"></oauthService>
          <log>
             <property name="Message Flow" value="Products API - IN"/>
          </log>
          <send>
             <endpoint>
                <http method="GET"
-                     uri-template="http://localhost:8080/soa_home2/rest/LogisiticService/{uri.var.orderid}"/>
+                     uri-template="http://localhost:8080/test/rest/LogisiticService/{uri.var.orderid}"/>
             </endpoint>
          </send>
       </inSequence>
@@ -86,13 +90,14 @@
 
 <resource methods="GET" uri-template="/api/Manufactures/{orderid}">
       <inSequence>
+         <oauthService remoteServiceUrl="https://localhost:9444/services" username="admin" password="admin"></oauthService>
          <log>
             <property name="Message Flow" value="Products API - IN"/>
          </log>
          <send>
             <endpoint>
                <http method="GET"
-                     uri-template="http://localhost:8080/soa_home2/rest/Manufactures/{uri.var.orderid}"/>
+                     uri-template="http://localhost:8080/test/rest/Manufactures/{uri.var.orderid}"/>
             </endpoint>
          </send>
       </inSequence>
@@ -104,11 +109,11 @@
 
    <resource methods="POST" uri-template="/api/addorder">
       <inSequence>
-        
+         <oauthService remoteServiceUrl="https://localhost:9444/services" username="admin" password="admin"></oauthService>
          <send>
             <endpoint>
                <http method="POST"
-                     uri-template="http://localhost:8080/soa_home2/rest/ECommerce/addorder"/>
+                     uri-template="http://localhost:8080/test/rest/ECommerce/addorder"/>
             </endpoint>
          </send>
       </inSequence>
