@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="ContentBasedRoutingProxy"
+       startOnLoad="true">
+   <target>
+      <inSequence><!-- The content of the incoming message will be isolated --><switch source="//request/symbol[1]">
+           <case regex="products">
+               <send>
+                  <endpoint>
+                     <http method="GET"
+                           uri-template="http://localhost:8281/ecommerce/api/products"/>
+                  </endpoint>
+               </send>
+            </case>
+            <case regex="orders">
+               <send>
+                  <endpoint>
+                     <http method="GET" uri-template="http://localhost:8281/ecommerce/api/orders"/>
+                  </endpoint>
+               </send>
+            </case>
+            <case regex="manufactures">
+               <send>
+                  <endpoint>
+                     <http method="GET"
+                           uri-template="http://localhost:8281/ecommerce/api/Manufactures/{query.param.id}"/>
+                  </endpoint>
+               </send>
+            </case>
+            <case regex="logisitic">
+               <send>
+                  <endpoint>
+                     <http method="GET"
+                           uri-template="http://localhost:8281/ecommerce/api/LogisiticService/{query.param.id}"/>
+                  </endpoint>
+               </send>
+            </case>
+            <case regex="proccess">
+               <send>
+                  <endpoint>
+                     <http method="GET"
+                           uri-template="http://localhost:8281/ecommerce/api/proccess/{query.param.id}"/>
+                  </endpoint>
+               </send>
+            </case>
+           
+            <case regex="order">
+                  <send>
+                     <endpoint>
+                        <http method="GET"
+                              uri-template="http://localhost:8281/ecommerce/api/orders?id={query.param.id}"/>
+                     </endpoint>
+                  </send>    
+            </case>
+
+            <default><!-- it is possible to assign the result of an XPath expression as well -->
+               <property name="symbol"
+                         expression="fn:concat('No match - ', //request/symbol[1])"/>
+            </default>
+         </switch>
+         <log level="custom">
+            <property name="symbol"
+                         expression="get-property('symbol')"/>
+            <property name="epr" expression="get-property('To')"/>
+         </log>
+      </inSequence>
+      <outSequence>
+         <send/>
+      </outSequence>
+   </target>
+</proxy>
